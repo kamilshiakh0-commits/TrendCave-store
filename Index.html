@@ -1,0 +1,84 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TrendCave — Skullcandy Inspired Store</title>
+  <style>
+    :root{--accent:#ff3c3c;--dark:#111;--muted:#ccc;--bg:#1a1a1a}
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui,sans-serif}
+    body{background:var(--bg);color:white}
+    header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;border-bottom:1px solid #222}
+    .logo{font-weight:700;font-size:24px;color:var(--accent)}
+    nav a{margin-left:20px;color:var(--muted);text-decoration:none;font-weight:500}
+    .hero{display:flex;flex-wrap:wrap;align-items:center;padding:40px;background:#000}
+    .hero-left{flex:1;min-width:300px}
+    .hero-left h1{font-size:48px;line-height:1.2;color:white;margin-bottom:16px}
+    .hero-left p{color:var(--muted);margin-bottom:20px;font-size:16px}
+    .cta{background:var(--accent);color:white;padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:600}
+    .hero-right{flex:1;min-width:300px;text-align:center}
+    .hero-right img{width:100%;max-width:400px;border-radius:10px}
+    .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;padding:40px}
+    .card{background:#222;padding:16px;border-radius:12px;text-align:center;transition:transform .2s}
+    .card:hover{transform:scale(1.05)}
+    .card img{width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:12px}
+    .card h3{margin-bottom:8px;color:white}
+    .card p{color:var(--muted);font-size:14px;margin-bottom:12px}
+    .price{font-weight:700;margin-bottom:8px}
+    .add-btn{background:var(--accent);border:none;color:white;padding:10px 16px;border-radius:8px;cursor:pointer;font-weight:600}
+    footer{padding:40px;text-align:center;color:var(--muted);border-top:1px solid #222;margin-top:40px}
+    @media(max-width:720px){.hero{flex-direction:column}.hero-right{order:-1}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">TrendCave</div>
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>  <section class="hero">
+    <div class="hero-left">
+      <h1>Feel the Beat, Own the Style</h1>
+      <p>Premium headphones and earphones inspired by Skullcandy. Trendy designs, high quality sound, long-lasting battery.</p>
+      <a class="cta" href="#products">Shop Now</a>
+    </div>
+    <div class="hero-right">
+      <img src="https://via.placeholder.com/400x400?text=Skullcandy+Inspired+Headphones" alt="Hero Product">
+    </div>
+  </section>  <section id="products" class="product-grid">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x180?text=Wireless+Earbuds" alt="Earbuds">
+      <h3>Wireless Earbuds</h3>
+      <p>Crystal clear sound, long battery life</p>
+      <div class="price">₹1,299</div>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x180?text=Over-Ear+Headphones" alt="Over-Ear">
+      <h3>Over-Ear Headphones</h3>
+      <p>Deep bass, noise-cancelling</p>
+      <div class="price">₹2,499</div>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x180?text=Gaming+Headset" alt="Gaming">
+      <h3>Gaming Headset</h3>
+      <p>Immersive sound for gaming</p>
+      <div class="price">₹3,199</div>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x180?text=Portable+Bluetooth+Speaker" alt="Speaker">
+      <h3>Portable Speaker</h3>
+      <p>Compact design, loud sound</p>
+      <div class="price">₹1,799</div>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+  </section>  <footer>
+    &copy; 2025 TrendCave. Inspired by Skullcandy. Built for dropshipping practice.
+  </footer>
+</body>
+</html>
