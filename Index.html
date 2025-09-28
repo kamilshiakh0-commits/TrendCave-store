@@ -1,84 +1,146 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>TrendCave — Skullcandy Inspired Store</title>
-  <style>
-    :root{--accent:#ff3c3c;--dark:#111;--muted:#ccc;--bg:#1a1a1a}
-    *{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui,sans-serif}
-    body{background:var(--bg);color:white}
-    header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;border-bottom:1px solid #222}
-    .logo{font-weight:700;font-size:24px;color:var(--accent)}
-    nav a{margin-left:20px;color:var(--muted);text-decoration:none;font-weight:500}
-    .hero{display:flex;flex-wrap:wrap;align-items:center;padding:40px;background:#000}
-    .hero-left{flex:1;min-width:300px}
-    .hero-left h1{font-size:48px;line-height:1.2;color:white;margin-bottom:16px}
-    .hero-left p{color:var(--muted);margin-bottom:20px;font-size:16px}
-    .cta{background:var(--accent);color:white;padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:600}
-    .hero-right{flex:1;min-width:300px;text-align:center}
-    .hero-right img{width:100%;max-width:400px;border-radius:10px}
-    .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;padding:40px}
-    .card{background:#222;padding:16px;border-radius:12px;text-align:center;transition:transform .2s}
-    .card:hover{transform:scale(1.05)}
-    .card img{width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:12px}
-    .card h3{margin-bottom:8px;color:white}
-    .card p{color:var(--muted);font-size:14px;margin-bottom:12px}
-    .price{font-weight:700;margin-bottom:8px}
-    .add-btn{background:var(--accent);border:none;color:white;padding:10px 16px;border-radius:8px;cursor:pointer;font-weight:600}
-    footer{padding:40px;text-align:center;color:var(--muted);border-top:1px solid #222;margin-top:40px}
-    @media(max-width:720px){.hero{flex-direction:column}.hero-right{order:-1}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Puppy Overlay</title>
+
+    <style>
+        body {
+            /* Agar aapki website ka koi background ho toh theek hai, varna yeh puppy hamesha top par rahega */
+            padding: 0;
+            margin: 0;
+            height: 200vh; /* Sirf testing ke liye taaki scroll kar saken */
+        }
+        
+        #puppy-container {
+            position: fixed; /* Sabse zaroori: Screen par fix rakhega */
+            top: 50px; 
+            left: 50px;
+            z-index: 9999; /* Sabse upar dikhega */
+            cursor: pointer;
+            transition: transform 0.5s ease-in-out;
+            /* Puppy jab ulta ghoomega toh smooth transition ke liye */
+        }
+
+        #cute-puppy {
+            display: block;
+            width: 100px; /* Aap apne hisaab se size badal sakte hain */
+            height: 100px;
+        }
+
+        #buy-message {
+            position: absolute;
+            bottom: 110%; /* Puppy ke upar position */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            border: 2px solid #ff69b4;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            width: 150px;
+            text-align: center;
+            
+            /* Default mein message box hidden */
+            opacity: 0; 
+            pointer-events: none; /* Jab hidden ho toh click ko ignore karega */
+            transition: opacity 0.3s ease;
+        }
+
+        #buy-message p {
+            margin-top: 0;
+            font-size: 14px;
+            color: #333;
+            font-family: sans-serif;
+        }
+
+        #buy-message button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="logo">TrendCave</div>
-    <nav>
-      <a href="#products">Products</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>  <section class="hero">
-    <div class="hero-left">
-      <h1>Feel the Beat, Own the Style</h1>
-      <p>Premium headphones and earphones inspired by Skullcandy. Trendy designs, high quality sound, long-lasting battery.</p>
-      <a class="cta" href="#products">Shop Now</a>
+
+    <div id="puppy-container">
+        
+        <img id="cute-puppy" src="https://postimg.cc/V5Zn5xtM" alt="Cute Puppy"> 
+        
+        <div id="buy-message">
+            <p>Adopt me! Click 'Buy' now! 🐕</p>
+            <button onclick="alert('Thank you for buying me!');">Buy Now!</button>
+        </div>
     </div>
-    <div class="hero-right">
-      <img src="https://via.placeholder.com/400x400?text=Skullcandy+Inspired+Headphones" alt="Hero Product">
-    </div>
-  </section>  <section id="products" class="product-grid">
-    <div class="card">
-      <img src="https://via.placeholder.com/300x180?text=Wireless+Earbuds" alt="Earbuds">
-      <h3>Wireless Earbuds</h3>
-      <p>Crystal clear sound, long battery life</p>
-      <div class="price">₹1,299</div>
-      <button class="add-btn">Add to Cart</button>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/300x180?text=Over-Ear+Headphones" alt="Over-Ear">
-      <h3>Over-Ear Headphones</h3>
-      <p>Deep bass, noise-cancelling</p>
-      <div class="price">₹2,499</div>
-      <button class="add-btn">Add to Cart</button>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/300x180?text=Gaming+Headset" alt="Gaming">
-      <h3>Gaming Headset</h3>
-      <p>Immersive sound for gaming</p>
-      <div class="price">₹3,199</div>
-      <button class="add-btn">Add to Cart</button>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/300x180?text=Portable+Bluetooth+Speaker" alt="Speaker">
-      <h3>Portable Speaker</h3>
-      <p>Compact design, loud sound</p>
-      <div class="price">₹1,799</div>
-      <button class="add-btn">Add to Cart</button>
-    </div>
-  </section>  <footer>
-    &copy; 2025 TrendCave. Inspired by Skullcandy. Built for dropshipping practice.
-  </footer>
+    
+    <h1 style="text-align:center; padding-top:100px;">My Awesome Website</h1>
+    <p style="text-align:center;">Scroll to see the puppy follow you!</p>
+    <script>
+        const puppyContainer = document.getElementById('puppy-container');
+        const buyMessage = document.getElementById('buy-message');
+
+        let x = 50; 
+        let y = 50; 
+        let dx = 3; // X-speed
+        let dy = 3; // Y-speed
+
+        function movePuppy() {
+            // Screen ki width/height
+            const maxX = window.innerWidth - puppyContainer.offsetWidth;
+            const maxY = window.innerHeight - puppyContainer.offsetHeight;
+
+            x += dx;
+            y += dy;
+
+            // Jab horizontal edge se takraye
+            if (x > maxX || x < 0) {
+                dx = -dx;
+                // Puppy ko flip karna (jis direction mein jaa raha hai)
+                puppyContainer.style.transform = (dx > 0) ? 'scaleX(1)' : 'scaleX(-1)'; 
+            }
+            // Jab vertical edge se takraye
+            if (y > maxY || y < 0) {
+                dy = -dy;
+            }
+
+            puppyContainer.style.left = x + 'px';
+            puppyContainer.style.top = y + 'px';
+
+            requestAnimationFrame(movePuppy);
+        }
+
+        // Animation shuru karein
+        requestAnimationFrame(movePuppy);
+
+        // --- "Force Buy" Logic ---
+
+        // 1. Puppy par click karne par message dikhana
+        puppyContainer.addEventListener('click', () => {
+            buyMessage.style.opacity = '1';
+            buyMessage.style.pointerEvents = 'auto';
+            
+            setTimeout(() => {
+                buyMessage.style.opacity = '0';
+                buyMessage.style.pointerEvents = 'none';
+            }, 5000); // Message 5 seconds tak dikhega
+        });
+
+        // 2. Har 15 seconds mein ek baar message ko flash karna (User ko force karne ke liye)
+        setInterval(() => {
+            buyMessage.style.opacity = '1';
+            buyMessage.style.pointerEvents = 'auto';
+
+            setTimeout(() => {
+                buyMessage.style.opacity = '0';
+                buyMessage.style.pointerEvents = 'none';
+            }, 1000); // 1 second ke liye flash hoga
+            
+        }, 15000); // Har 15 seconds ke interval par
+    </script>
 </body>
 </html>
